@@ -1,0 +1,25 @@
+name: Sync to Hugging Face Spaces
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Migrate binary files to Git LFS
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git lfs install
+          git stash || true
+          git lfs migrate import --include="*.png,*.jpg,*.jpeg,*.gif" --everything --yes
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push --force https://kameshcodes:$HF_TOKEN@huggingface.co/spaces/kameshcodes/value-at-risk main

@@ -1,7 +1,20 @@
+---
+title: VaR Engine
+emoji: 📉
+colorFrom: blue
+colorTo: red
+sdk: gradio
+sdk_version: "6.9.0"
+python_version: "3.13"
+app_file: app.py
+pinned: false
+---
+
 # VaR Engine
 
 An interactive web app to compute **Value at Risk (VaR)** and **Expected Shortfall (ES)** for equities, featuring an interactive Gradio UI and **audit-ready Excel reports with embedded formulas**.
 
+![App Screenshot](assets/screenshot.png)
 
 ## Features
 
@@ -12,6 +25,11 @@ An interactive web app to compute **Value at Risk (VaR)** and **Expected Shortfa
 - **Audit-Ready Excel**: Exports reports with **formula-driven calculations (no hardcoded outputs)**
 
 ## Getting Started
+
+```bash
+git clone https://github.com/kameshcodes/value-at-risk.git
+cd value-at-risk
+```
 
 ### Option 1: Using `uv` (Recommended)
 
