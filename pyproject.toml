@@ -1,0 +1,22 @@
+[project]
+name = "value-at-risk"
+version = "0.1.0"
+description = "Portfolio Value at Risk (VaR) Analysis Engine"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "gradio>=6.9.0",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.1",
+    "plotly>=6.6.0",
+    "kaleido>=0.2.1",
+    "yfinance>=1.2.0",
+    "scipy>=1.17.1",
+]
+
+[tool.pyright]
+include = ["."]
+extraPaths = ["."]

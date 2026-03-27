@@ -1,0 +1,19 @@
+# ------------------------------------------------------------------
+# VaR Engine – Application Settings
+# ------------------------------------------------------------------
+
+tickers:
+  - AAPL
+  - MSFT
+  - GOOG
+  - AMZN
+  - NVDA
+  - JPM
+  - BCS
+
+lookback_days: 251
+
+# Stress window used for Stressed VaR/ES
+stressed_period_label: "Global Financial Crisis (2008)"
+stressed_period_start_date: "2008-01-01"
+stressed_period_end_date: "2008-12-31"
