@@ -203,7 +203,7 @@ def plot_distribution(
         template="plotly_white",
         yaxis=dict(showgrid=False),
         margin=dict(t=80, b=40),
-        height=392.5,
+        height=388.5,
         showlegend=False,
     )
 

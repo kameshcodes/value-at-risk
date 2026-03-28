@@ -2,6 +2,8 @@
 app.py -- Gradio UI for Value at Risk Analysis.
 """
 
+import os
+
 import pandas as pd
 import gradio as gr
 from src.logger import logger
@@ -265,6 +267,17 @@ def build_app() -> gr.Blocks:
             fn=enable_run_button_for_method, inputs=method_radio, outputs=run_btn
         )
 
+        gr.Markdown(
+            '<hr style="margin:2rem 0 0.5rem; border:none; border-top:1px solid #e5e7eb;">'
+            '<p style="text-align:center; margin:0; padding:0.75rem 0;">'
+            '<a href="https://kameshcodes.github.io/portfolio/" target="_blank" '
+            'style="color:#fa8529; font-weight:600; font-size:1rem; text-decoration:none;">'
+            "Built by Kamesh : Portfolio "
+            '<span style="display:inline-block; transform:rotate(-65deg); color:#fa8529;">\u2192</span>'
+            "</a></p>",
+            elem_id="portfolio-footer",
+        )
+
     return app
 
 
@@ -274,22 +287,33 @@ def build_app() -> gr.Blocks:
 
 if __name__ == "__main__":
     custom_css = """
-    .form { border: none !important; box-shadow: none !important; gap: 0 !important; }
+    .form { ¸border: none !important; box-shadow: none !important; gap: 0 !important; }
     .form .block, .form .row, .form > * { border: none !important; box-shadow: none !important; }
     #excel-btn, #excel-btn.primary {
-        background: #ea580c !important;
-        background-color: #ea580c !important;
+        background: #f97316 !important;
+        background-color: #f97316 !important;
         color: white !important;
-        border-color: #7c2d12 !important;
-        border: 1px solid #7c2d12 !important;
+        border-color: #9a3412 !important;
+        border: 1px solid #9a3412 !important;
     }
     #excel-btn:hover, #excel-btn.primary:hover {
-        background: #c2410c !important;
-        background-color: #c2410c !important;
-        border-color: #451a03 !important;
-        border: 1px solid #451a03 !important;
+        background: #ea580c !important;
+        background-color: #ea580c !important;
+        border-color: #9a3412 !important;
+        border: 1px solid #9a3412 !important;
+    }
+    #portfolio-footer a {
+        color: #fa8529 !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+    #portfolio-footer a:hover {
+        color: #fb923c !important;
+        text-decoration: underline !important;
     }
     """
 
+    port = int(os.environ.get("PORT", 7860))
+
     application = build_app()
-    application.launch(share=True, theme=gr.themes.Base(), css=custom_css)  
+    application.launch(server_name="0.0.0.0", server_port=port, share=False, theme=gr.themes.Base(), css=custom_css)
