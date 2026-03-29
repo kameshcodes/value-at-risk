@@ -414,7 +414,7 @@ def _export_sheet(
 
     workbook.save(path)
     action = "sheet added" if stressed else "report saved"
-    logger.info(f"{method} VaR ES {action}: {path}")
+    logger.debug(f"{method} VaR ES {action}: {path}")
     return path
 
 

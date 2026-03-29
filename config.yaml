@@ -2,6 +2,10 @@
 # VaR Engine – Application Settings
 # ------------------------------------------------------------------
 
+# Environment: dev | test | prod
+env: prod
+
+# List of stock tickers available in the UI dropdown.
 tickers:
   - AAPL
   - MSFT
@@ -11,9 +15,12 @@ tickers:
   - JPM
   - BCS
 
+# Number of historical trading days used to estimate VaR/ES.
+# Note: n trading days yields n-1 daily returns for VaR estimation.
 lookback_days: 251
 
-# Stress window used for Stressed VaR/ES
+# Stress window used for Stressed VaR/ES.
+# Defines the historical period for stress-testing the portfolio.
 stressed_period_label: "Global Financial Crisis (2008)"
 stressed_period_start_date: "2008-01-01"
 stressed_period_end_date: "2008-12-31"

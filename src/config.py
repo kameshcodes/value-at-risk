@@ -5,6 +5,7 @@ Usage:
     from src.config import TICKERS, LOOKBACK_DAYS, STRESS_LABEL, STRESS_START_DATE, STRESS_END_DATE
 """
 
+import os
 from pathlib import Path
 
 import yaml
@@ -14,6 +15,7 @@ _CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
 with open(_CONFIG_PATH) as _f:
     _cfg = yaml.safe_load(_f)
 
+ENV: str = os.environ.get("ENV", _cfg.get("env", "dev")).lower()
 TICKERS: list[str] = _cfg["tickers"]
 LOOKBACK_DAYS: int = _cfg["lookback_days"]
 STRESS_LABEL: str = _cfg["stressed_period_label"]

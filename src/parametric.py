@@ -86,7 +86,7 @@ def compute_stressed_parametric_var_es(
     daily_returns = compute_returns(prices, kind="log")
     result = compute_parametric_var_es(daily_returns, var_confidence, es_confidence, n_days, portfolio_value)
 
-    logger.info(
+    logger.debug(
         f"Stressed Parametric VaR: 1d=${result['var_1d']:,.2f}, {n_days}d=${result['var_nd']:,.2f} | "
         f"Stressed ES: 1d=${result['es_1d']:,.2f}, {n_days}d=${result['es_nd']:,.2f}"
     )
@@ -165,7 +165,7 @@ def parametric_var_es_pipeline(
         ticker=ticker,
     )
 
-    logger.info(
+    logger.debug(
         f"Parametric VaR: 1d=${normal['var_1d']:,.2f}, {n_days}d=${normal['var_nd']:,.2f} | "
         f"ES: 1d=${normal['es_1d']:,.2f}, {n_days}d=${normal['es_nd']:,.2f}"
     )

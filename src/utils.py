@@ -64,7 +64,7 @@ def fetch_prices(
         prices = prices.iloc[start_idx:]
         prices = prices.loc[:end_date]
 
-        logger.info(
+        logger.debug(
             f"Fetched {len(prices)} trading days for {ticker} "
             f"({prices.index[0].strftime('%Y-%m-%d')} to {prices.index[-1].strftime('%Y-%m-%d')})"
         )
@@ -100,7 +100,7 @@ def fetch_prices(
     prices = pd.Series(df["Close"].squeeze())
     prices.name = ticker
     result = prices.tail(lookback)
-    logger.info(
+    logger.debug(
         f"Fetched {len(result)} trading days for {ticker} (last date: {result.index[-1].strftime('%Y-%m-%d')})"
     )
     return result
@@ -203,7 +203,7 @@ def plot_distribution(
         template="plotly_white",
         yaxis=dict(showgrid=False),
         margin=dict(t=80, b=40),
-        height=388.5,
+        height=391,
         showlegend=False,
     )
 

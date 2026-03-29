@@ -74,7 +74,7 @@ def compute_stressed_historical_var_es(
 
     result = compute_historical_var_es(daily_returns, var_confidence, es_confidence, n_days, portfolio_value)
 
-    logger.info(
+    logger.debug(
         f"Stressed VaR: 1d=${result['var_1d']:,.2f}, {n_days}d=${result['var_nd']:,.2f} | "
         f"Stressed ES: 1d=${result['es_1d']:,.2f}, {n_days}d=${result['es_nd']:,.2f}"
     )
@@ -152,7 +152,7 @@ def historical_var_es_pipeline(
         ticker=ticker,
     )
 
-    logger.info(
+    logger.debug(
         f"VaR: 1d=${normal['var_1d']:,.2f}, {n_days}d=${normal['var_nd']:,.2f} | "
         f"ES: 1d=${normal['es_1d']:,.2f}, {n_days}d=${normal['es_nd']:,.2f}"
     )
