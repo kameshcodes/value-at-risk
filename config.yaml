@@ -17,7 +17,7 @@ tickers:
 
 # Number of historical trading days used to estimate VaR/ES.
 # Note: n trading days yields n-1 daily returns for VaR estimation.
-lookback_days: 251
+lookback_days: 253
 
 # Stress window used for Stressed VaR/ES.
 # Defines the historical period for stress-testing the portfolio.
