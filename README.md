@@ -10,11 +10,17 @@ app_file: app.py
 pinned: false
 ---
 
+&nbsp;
+
 # VaR Engine
 
 An interactive web app to compute **Value at Risk (VaR)** and **Expected Shortfall (ES)** for equities, featuring an interactive Gradio UI and **audit-ready Excel reports with embedded formulas**.
 
+&nbsp;
+
 ![App Screenshot](assets/screenshot.png)
+
+&nbsp;
 
 ## Features
 
@@ -23,6 +29,8 @@ An interactive web app to compute **Value at Risk (VaR)** and **Expected Shortfa
 - **Historical & Parametric VaR**: Supports both Historical and Parametric (variance-covariance) methods
 - **Stressed VaR/ES**: Computes stressed metrics over a configurable stress window (e.g. GFC 2008)
 - **Audit-Ready Excel**: Exports reports with **formula-driven calculations (no hardcoded outputs)**
+
+&nbsp;
 
 ## Getting Started
 
@@ -68,6 +76,8 @@ cd value-at-risk
 
 The server will launch locally (typically at `http://127.0.0.1:7860` or `http://localhost:7860`). Open this address in your browser to access the VaR Engine.
 
+&nbsp;
+
 ## Project Structure
 
 - **`app.py`**: The thin Gradio presentation/UI layer.
@@ -76,7 +86,9 @@ The server will launch locally (typically at `http://127.0.0.1:7860` or `http://
 - **`notebooks/`**: Jupyter notebooks for exploratory analysis (historical, parametric, Monte Carlo).
 - **`log/`**: Persistent application logs managed by `loguru`.
 - **`output/`**: Directory for exported Excel report files.
+- **[`reports/samples/`](reports/samples)**: Sample Excel reports showing VaR calculation output and format.
 
+&nbsp;
 
 ## Future Work
 
